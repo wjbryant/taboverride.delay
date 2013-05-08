@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Delay Extension Example</title>
+    </head>
+    <body>
+        <textarea id="txt" cols="50" rows="10"></textarea>
+        <script src="lib/jquery-1.9.1.min.js"></script>
+        <script src="lib/taboverride-4.0.0-dev.2013.05.08.min.js"></script>
+        <script src="lib/jquery.taboverride-4.0.0-dev.2013.05.08.min.js"></script>
+        <script src="../src/taboverride.delay.js"></script>
+        <script src="../src/jquery.taboverride.delay.js"></script>
+        <script>
+            /*global TABOVERRIDE, jQuery, $ */
+
+            // delay is set to 250ms by default
+            $('#txt').tabOverride();
+
+            // set delay to 0 to "disable" it
+            //$.fn.tabOverride.delay(0);
+        </script>
+    </body>
+</html>
