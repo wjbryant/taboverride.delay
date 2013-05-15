@@ -1,7 +1,7 @@
 /*! taboverride.delay v0.1-dev | https://github.com/wjbryant/taboverride.delay
 Copyright (c) 2013 Bill Bryant | http://opensource.org/licenses/mit */
 
-/*global TABOVERRIDE */
+/*global tabOverride */
 
 // use CommonJS or AMD if available
 (function (factory) {
@@ -16,27 +16,27 @@ Copyright (c) 2013 Bill Bryant | http://opensource.org/licenses/mit */
         define(['taboverride'], factory);
     } else {
         // no module format - use global variable
-        factory(TABOVERRIDE);
+        factory(tabOverride);
     }
-}(function (TABOVERRIDE) {
+}(function (tabOverride) {
     'use strict';
 
     var delay = 250,
-        focusListener = TABOVERRIDE.utils.createListeners([{
+        focusListener = tabOverride.utils.createListeners([{
             type: 'focus',
             handler: function (e) {
                 e = e || event;
                 var target = e.target || e.srcElement;
 
-                TABOVERRIDE.utils.removeListeners(target);
+                tabOverride.utils.removeListeners(target);
 
                 setTimeout(function () {
-                    TABOVERRIDE.utils.addListeners(target);
+                    tabOverride.utils.addListeners(target);
                 }, delay);
             }
         }]);
 
-    TABOVERRIDE.delay = function (ms) {
+    tabOverride.delay = function (ms) {
         if (arguments.length) {
             delay = typeof ms === 'number' && ms >= 0 ? ms : 0;
             return this;
@@ -44,7 +44,7 @@ Copyright (c) 2013 Bill Bryant | http://opensource.org/licenses/mit */
         return delay;
     };
 
-    TABOVERRIDE.addExtension(function (elem, enable) {
+    tabOverride.addExtension(function (elem, enable) {
         focusListener[enable ? 'add' : 'remove'](elem);
     });
 }));
