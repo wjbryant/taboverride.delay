@@ -1,4 +1,4 @@
-/*! taboverride.delay v0.1-dev | https://github.com/wjbryant/taboverride.delay
+/*! taboverride.delay v0.1.0-dev | https://github.com/wjbryant/taboverride.delay
 Copyright (c) 2013 Bill Bryant | http://opensource.org/licenses/mit */
 
 /*global tabOverride */
