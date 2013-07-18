@@ -42,7 +42,7 @@ Copyright (c) 2013 Bill Bryant | http://opensource.org/licenses/mit */
 
 	$fnTabOverride.delay = tabOverride.delay;
 
-	$fnTabOverride.addExtension( "setDelegated", function ( $container, selector, enable ) {
+	tabOverride.addExtension( "setDelegated", function ( $container, selector, enable ) {
 		$container.off( "focus.tabOverrideDelay", selector );
 
 		if ( enable ) {
