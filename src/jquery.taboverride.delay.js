@@ -42,14 +42,14 @@ Copyright (c) 2013 Bill Bryant | http://opensource.org/licenses/mit */
 
 	$fnTabOverride.delay = tabOverride.delay;
 
-	$fnTabOverride.addDelegatedExtension(function ( $container, selector, enable ) {
+	$fnTabOverride.addExtension( "setDelegated", function ( $container, selector, enable ) {
 		$container.off( "focus.tabOverrideDelay", selector );
 
 		if ( enable ) {
 			$container.on( "focus.tabOverrideDelay", selector, function () {
 				$fnTabOverride.utils.removeDelegatedListeners( $container, selector );
 
-				clearTimeout(timeout);
+				clearTimeout( timeout );
 				timeout = setTimeout(function () {
 					$fnTabOverride.utils.addDelegatedListeners( $container, selector );
 				}, $fnTabOverride.delay() );
