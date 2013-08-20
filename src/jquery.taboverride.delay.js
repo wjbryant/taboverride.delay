@@ -5,18 +5,9 @@ Copyright (c) 2013 Bill Bryant | http://opensource.org/licenses/mit */
 /*global exports, require, define, jQuery, tabOverride */
 
 /**
- * the global jQuery object
+ * The tabOverride jQuery plugin
  *
- * @name jQuery
- * @namespace
- */
-
-/**
- * the jQuery prototype shortcut "namespace"
- *
- * @name fn
- * @namespace
- * @memberOf jQuery
+ * @external "jQuery.fn.tabOverride"
  */
 
 // Use CommonJS or AMD if available
@@ -41,6 +32,17 @@ Copyright (c) 2013 Bill Bryant | http://opensource.org/licenses/mit */
 	var $fnTabOverride = $.fn.tabOverride,
 		timeout;
 
+	/**
+	 * Gets or sets the amount of time to delay before enabling Tab Override.
+	 * The default delay time is 250ms.
+	 *
+	 * @param  {number}        [ms]  the amount of time in milliseconds to
+	 *                               delay before enabling Tab Override
+	 * @return {number|Object}       the delay amount in milliseconds or the
+	 *                               tabOverride object
+	 *
+	 * @method external:"jQuery.fn.tabOverride".delay
+	 */
 	$fnTabOverride.delay = tabOverride.delay;
 
 	tabOverride.addExtension( "setDelegated", function ( $container, selector, enable ) {

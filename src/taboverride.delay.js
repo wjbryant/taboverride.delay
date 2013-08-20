@@ -4,6 +4,8 @@ Copyright (c) 2013 Bill Bryant | http://opensource.org/licenses/mit */
 /*jslint browser: true */
 /*global exports, require, define, tabOverride */
 
+/** @external tabOverride */
+
 // use CommonJS or AMD if available
 (function (factory) {
     'use strict';
@@ -45,6 +47,17 @@ Copyright (c) 2013 Bill Bryant | http://opensource.org/licenses/mit */
             }
         }]);
 
+    /**
+     * Gets or sets the amount of time to delay before enabling Tab Override.
+     * The default delay time is 250ms.
+     *
+     * @param  {number}        [ms]  the amount of time in milliseconds to
+     *                               delay before enabling Tab Override
+     * @return {number|Object}       the delay amount in milliseconds or the
+     *                               tabOverride object
+     *
+     * @memberOf external:tabOverride
+     */
     tabOverride.delay = function (ms) {
         if (arguments.length) {
             delay = typeof ms === 'number' && ms >= 0 ? ms : 0;
