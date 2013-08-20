@@ -1,6 +1,7 @@
 /*! jquery.taboverride.delay v0.1.0-dev | https://github.com/wjbryant/taboverride.delay
 Copyright (c) 2013 Bill Bryant | http://opensource.org/licenses/mit */
 
+/*jslint browser: true, white: true */
 /*global exports, require, define, jQuery, tabOverride */
 
 /**
@@ -47,12 +48,18 @@ Copyright (c) 2013 Bill Bryant | http://opensource.org/licenses/mit */
 
 		if ( enable ) {
 			$container.on( "focus.tabOverrideDelay", selector, function () {
-				$fnTabOverride.utils.removeDelegatedListeners( $container, selector );
+				var delayTime = $fnTabOverride.delay();
 
 				clearTimeout( timeout );
-				timeout = setTimeout(function () {
-					$fnTabOverride.utils.addDelegatedListeners( $container, selector );
-				}, $fnTabOverride.delay() );
+
+				// Only remove and add listeners if delay is set
+				if ( delayTime ) {
+					$fnTabOverride.utils.removeDelegatedListeners( $container, selector );
+
+					timeout = setTimeout(function () {
+						$fnTabOverride.utils.addDelegatedListeners( $container, selector );
+					}, delayTime );
+				}
 			});
 		}
 	});

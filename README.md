@@ -1,4 +1,4 @@
-# taboverride.delay
+# tabOverride.delay
 
 Delay extension for [Tab Override](https://github.com/wjbryant/taboverride) 4.0+
 
@@ -20,7 +20,7 @@ var delayTime = tabOverride.delay();
 tabOverride.delay(500);
 ```
 
-Setting the delay to 0 will effectively disable the extension.
+Set the delay to 0 to disable the extension.
 
 ```javascript
 // don't use any delay

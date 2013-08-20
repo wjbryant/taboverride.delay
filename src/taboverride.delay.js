@@ -1,6 +1,7 @@
 /*! taboverride.delay v0.1.0-dev | https://github.com/wjbryant/taboverride.delay
 Copyright (c) 2013 Bill Bryant | http://opensource.org/licenses/mit */
 
+/*jslint browser: true */
 /*global exports, require, define, tabOverride */
 
 // use CommonJS or AMD if available
@@ -22,17 +23,25 @@ Copyright (c) 2013 Bill Bryant | http://opensource.org/licenses/mit */
     'use strict';
 
     var delay = 250,
+        timeout,
         focusListener = tabOverride.utils.createListeners([{
             type: 'focus',
             handler: function (e) {
-                e = e || event;
-                var target = e.target || e.srcElement;
+                var target;
 
-                tabOverride.utils.removeListeners(target);
+                clearTimeout(timeout);
 
-                setTimeout(function () {
-                    tabOverride.utils.addListeners(target);
-                }, delay);
+                // only remove and add listeners if delay is set
+                if (delay) {
+                    e = e || event;
+                    target = e.target || e.srcElement;
+
+                    tabOverride.utils.removeListeners(target);
+
+                    timeout = setTimeout(function () {
+                        tabOverride.utils.addListeners(target);
+                    }, delay);
+                }
             }
         }]);
 
