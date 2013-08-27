@@ -1,0 +1,26 @@
+{
+    "name": "taboverride.delay",
+    "version": "0.1.0",
+    "author": {
+        "name": "Bill Bryant",
+        "url": "http://wjbryant.com/"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://opensource.org/licenses/mit"
+        }
+    ],
+    "libDependencies": {
+        "taboverride": ">=4.0.0 <5.0.0"
+    },
+    "description": "Delay extension for Tab Override. Adds a delay after the textarea receives focus before Tab Override is activated.",
+    "keywords": [
+        "tab",
+        "tabs",
+        "delay",
+        "extension"
+    ],
+    "homepage": "https://github.com/wjbryant/taboverride.delay",
+    "bugs": "https://github.com/wjbryant/taboverride.delay/issues"
+}

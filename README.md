@@ -2,7 +2,7 @@
 
 Delay extension for [Tab Override](https://github.com/wjbryant/taboverride) 4.0+
 
-This extension allows for a delay after the textarea receives focus before Tab Override is enabled.
+This extension allows for a delay after the textarea receives focus before Tab Override is activated.
 
 ## Usage
 
